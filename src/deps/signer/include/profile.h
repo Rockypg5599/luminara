@@ -15,9 +15,9 @@ namespace signing::profile
 
 	namespace native
 	{
-		inline constexpr uintptr_t verify = 0x4239ae0;
+		inline constexpr uintptr_t verify = 0x42fd780;
 		inline constexpr uintptr_t destroy_string = 0x722920;
-		inline constexpr uintptr_t key = 0x6454adc;
+		inline constexpr uintptr_t key = 0x670f264;
 		inline constexpr std::array<uint8_t, 18> load_entry{ 0x40, 0x53, 0x56, 0x57, 0x41, 0x54, 0x41, 0x55, 0x41, 0x56, 0x41, 0x57, 0x48, 0x81, 0xec, 0x40, 0x01, 0x00 }; /* push rbx end->sub rsp, 0x140 */
 	}
 }
