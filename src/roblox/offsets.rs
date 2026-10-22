@@ -1,13 +1,13 @@
 pub mod datamodel {
-    pub const pointer: usize = 0x8dc8000;
+    pub const pointer: usize = 0x8f59810;
     pub const real: usize = 0x1f8;
     pub const scriptContext: usize = 0x440;
-    pub const requireBypass: usize = 0xa81;
-    pub const gameLoaded: usize = 0x5d0;
+    pub const requireBypass: usize = 0x0;
+    pub const gameLoaded: usize = 0x5c8;
 }
 
 pub mod instance {
-    pub const name: usize = 0x70;
+    pub const name: usize = 0x0;
     pub const nameStr: usize = 0x8;
     pub const classDesc: usize = 0x18;
     pub const className: usize = 0x8;
