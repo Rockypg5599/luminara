@@ -1,0 +1,571 @@
+pub mod offsets {
+    pub mod info {
+        pub const CLIENT_VERSION: &str = "version-5a21b87bbc2641cf";
+    }
+
+    pub mod air_properties {
+         pub const AIR_DENSITY: usize = 0x18;
+         pub const GLOBAL_WIND: usize = 0x3c;
+    }
+
+    pub mod animation_track {
+         pub const ANIMATION: usize = 0xa0;
+         pub const ANIMATOR: usize = 0xf8;
+         pub const IS_PLAYING: usize = 0xa10;
+         pub const LOOPED: usize = 0xcd;
+         pub const SPEED: usize = 0xbc;
+         pub const TIME_POSITION: usize = 0xc0;
+    }
+
+    pub mod animator {
+         pub const ACTIVE_ANIMATIONS: usize = 0x900;
+    }
+
+    pub mod atmosphere {
+         pub const COLOR: usize = 0xa0;
+         pub const DECAY: usize = 0xac;
+         pub const DENSITY: usize = 0xb8;
+         pub const GLARE: usize = 0xbc;
+         pub const HAZE: usize = 0xc0;
+         pub const OFFSET: usize = 0xc4;
+    }
+
+    pub mod attachment {
+         pub const POSITION: usize = 0xac;
+    }
+
+    pub mod base_part {
+         pub const CAST_SHADOW: usize = 0x120;
+         pub const COLOR3: usize = 0x11c;
+         pub const LOCKED: usize = 0x121;
+         pub const MASSLESS: usize = 0x122;
+         pub const PRIMITIVE: usize = 0x178;
+         pub const REFLECTANCE: usize = 0xf4;
+         pub const SHAPE: usize = 0x1a0;
+         pub const TRANSPARENCY: usize = 0x118;
+    }
+
+    pub mod beam {
+         pub const ATTACHMENT0: usize = 0x148;
+         pub const ATTACHMENT1: usize = 0x158;
+         pub const BRIGHTNESS: usize = 0x168;
+         pub const CURVE_SIZE0: usize = 0x16c;
+         pub const CURVE_SIZE1: usize = 0x170;
+         pub const LIGHT_EMISSION: usize = 0x174;
+         pub const LIGHT_INFLUENCE: usize = 0x178;
+         pub const TEXTURE: usize = 0x128;
+         pub const TEXTURE_LENGTH: usize = 0x184;
+         pub const TEXTURE_SPEED: usize = 0x18c;
+         pub const WIDTH0: usize = 0x190;
+         pub const WIDTH1: usize = 0x194;
+         pub const Z_OFFSET: usize = 0x198;
+    }
+
+    pub mod bloom_effect {
+         pub const ENABLED: usize = 0x98;
+         pub const INTENSITY: usize = 0xa0;
+         pub const SIZE: usize = 0xa4;
+         pub const THRESHOLD: usize = 0xa8;
+    }
+
+    pub mod blur_effect {
+         pub const ENABLED: usize = 0x98;
+         pub const SIZE: usize = 0xa0;
+    }
+
+    pub mod byte_code {
+         pub const POINTER: usize = 0x10;
+         pub const SIZE: usize = 0x28;
+    }
+
+    pub mod cached_item {
+         pub const FILE_MESH_DATA: usize = 0x40;
+    }
+
+    pub mod camera {
+         pub const CAMERA_SUBJECT: usize = 0xb0;
+         pub const CAMERA_TYPE: usize = 0x120;
+         pub const FIELD_OF_VIEW: usize = 0x128;
+         pub const IMAGE_PLANE_DEPTH: usize = 0x2d4;
+         pub const POSITION: usize = 0xe4;
+         pub const ROTATION: usize = 0xc0;
+         pub const VIEWPORT: usize = 0x284;
+         pub const VIEWPORT_SIZE: usize = 0x2c4;
+    }
+
+    pub mod character_mesh {
+         pub const BASE_TEXTURE_ID: usize = 0xb0;
+         pub const BODY_PART: usize = 0x130;
+         pub const MESH_ID: usize = 0xe0;
+         pub const OVERLAY_TEXTURE_ID: usize = 0x110;
+    }
+
+    pub mod click_detector {
+         pub const MAX_ACTIVATION_DISTANCE: usize = 0xd0;
+         pub const MOUSE_ICON: usize = 0xb0;
+    }
+
+    pub mod clothing {
+         pub const COLOR3: usize = 0x108;
+         pub const TEMPLATE: usize = 0xe8;
+    }
+
+    pub mod color_correction_effect {
+         pub const BRIGHTNESS: usize = 0xac;
+         pub const CONTRAST: usize = 0xb0;
+         pub const ENABLED: usize = 0x98;
+         pub const TINT_COLOR: usize = 0xa0;
+     }
+
+    pub mod color_grading_effect {
+         pub const ENABLED: usize = 0x98;
+         pub const TONEMAPPER_PRESET: usize = 0xa0;
+    }
+
+    pub mod data_model {
+         pub const CREATOR_ID: usize = 0x170;
+         pub const GAME_ID: usize = 0x178;
+         pub const GAME_LOADED: usize = 0x588;
+         pub const JOB_ID: usize = 0x108;
+         pub const PLACE_ID: usize = 0x180;
+         pub const PLACE_VERSION: usize = 0x19c;
+         pub const PRIMITIVE_COUNT: usize = 0x410;
+         pub const SCRIPT_CONTEXT: usize = 0x440;
+         pub const SERVER_IP: usize = 0x570;
+         pub const TO_RENDER_VIEW1: usize = 0x1b8;
+         pub const TO_RENDER_VIEW2: usize = 0x8;
+         pub const TO_RENDER_VIEW3: usize = 0x28;
+         pub const WORKSPACE: usize = 0x148;
+    }
+
+    pub mod depth_of_field_effect {
+         pub const ENABLED: usize = 0x98;
+         pub const FAR_INTENSITY: usize = 0xa0;
+         pub const FOCUS_DISTANCE: usize = 0xa4;
+         pub const IN_FOCUS_RADIUS: usize = 0xa8;
+         pub const NEAR_INTENSITY: usize = 0xac;
+    }
+
+    pub mod drag_detector {
+         pub const ACTIVATED_CURSOR_ICON: usize = 0x188;
+         pub const CURSOR_ICON: usize = 0xb0;
+         pub const MAX_ACTIVATION_DISTANCE: usize = 0xd0;
+         pub const MAX_DRAG_ANGLE: usize = 0x270;
+         pub const MAX_DRAG_TRANSLATION: usize = 0x234;
+         pub const MAX_FORCE: usize = 0x274;
+         pub const MAX_TORQUE: usize = 0x278;
+         pub const MIN_DRAG_ANGLE: usize = 0x27c;
+         pub const MIN_DRAG_TRANSLATION: usize = 0x240;
+         pub const REFERENCE_INSTANCE: usize = 0x1b8;
+         pub const RESPONSIVENESS: usize = 0x288;
+    }
+
+    pub mod fake_data_model {
+         pub const POINTER: usize = 0x8d06600;
+         pub const REAL_DATA_MODEL: usize = 0x1f8;
+    }
+
+    pub mod file_mesh_data {
+         pub const AABB_MAX: usize = 0x18c;
+         pub const AABB_MIN: usize = 0x180;
+         pub const FACES: usize = 0x30;
+         pub const FACES_END: usize = 0x38;
+         pub const VERTICES: usize = 0x0;
+         pub const VERTICES_END: usize = 0x8;
+    }
+
+    pub mod gui_base_2d {
+         pub const ABSOLUTE_POSITION: usize = 0xf4;
+         pub const ABSOLUTE_ROTATION: usize = 0xd0;
+         pub const ABSOLUTE_SIZE: usize = 0x0;
+    }
+
+    pub mod gui_object {
+         pub const BACKGROUND_COLOR3: usize = 0x508;
+         pub const BACKGROUND_TRANSPARENCY: usize = 0x514;
+         pub const BORDER_COLOR3: usize = 0x514;
+         pub const IMAGE: usize = 0x9a8;
+         pub const LAYOUT_ORDER: usize = 0x544;
+         pub const POSITION: usize = 0x4d8;
+         pub const RICH_TEXT: usize = 0xba0;
+         pub const ROTATION: usize = 0xd0;
+         pub const SCREEN_GUI_ENABLED: usize = 0x48c;
+         pub const SIZE: usize = 0x4f8;
+         pub const TEXT: usize = 0xe08;
+         pub const TEXT_COLOR3: usize = 0xeb8;
+         pub const VISIBLE: usize = 0x575;
+         pub const Z_INDEX: usize = 0x56c;
+    }
+
+    pub mod humanoid {
+         pub const AUTO_JUMP_ENABLED: usize = 0x1c8;
+         pub const AUTO_ROTATE: usize = 0x1c9;
+         pub const AUTOMATIC_SCALING_ENABLED: usize = 0x1ca;
+         pub const BREAK_JOINTS_ON_DEATH: usize = 0x1cc;
+         pub const CAMERA_OFFSET: usize = 0x110;
+         pub const DISPLAY_DISTANCE_TYPE: usize = 0x174;
+         pub const DISPLAY_NAME: usize = 0xa0;
+         pub const EVALUATE_STATE_MACHINE: usize = 0x1cd;
+         pub const FLOOR_MATERIAL: usize = 0x178;
+         pub const HEALTH: usize = 0x184;
+         pub const HEALTH_DISPLAY_DISTANCE: usize = 0x17c;
+         pub const HEALTH_DISPLAY_TYPE: usize = 0x180;
+         pub const HIP_HEIGHT: usize = 0x188;
+         pub const HUMANOID_ROOT_PART: usize = 0x460;
+         pub const HUMANOID_STATE: usize = 0x8a8;
+         pub const HUMANOID_STATE_ID: usize = 0x20;
+         pub const IS_WALKING: usize = 0xa2e;
+         pub const JUMP: usize = 0x1d0;
+         pub const JUMP_HEIGHT: usize = 0x194;
+         pub const JUMP_POWER: usize = 0x198;
+         pub const MAX_HEALTH: usize = 0x19c;
+         pub const MAX_SLOPE_ANGLE: usize = 0x1a0;
+         pub const MOVE_DIRECTION: usize = 0x134;
+         pub const MOVE_TO_PART: usize = 0x100;
+         pub const MOVE_TO_POINT: usize = 0x158;
+         pub const NAME_DISPLAY_DISTANCE: usize = 0x1a4;
+         pub const NAME_OCCLUSION: usize = 0x1a8;
+         pub const PLATFORM_STAND: usize = 0x1d2;
+         pub const REQUIRES_NECK: usize = 0x1d3;
+         pub const RIG_TYPE: usize = 0x1b4;
+         pub const SEAT_PART: usize = 0xf0;
+         pub const SIT: usize = 0x1d3;
+         pub const TARGET_POINT: usize = 0x140;
+         pub const USE_JUMP_POWER: usize = 0x1d6;
+         pub const WALK_TIMER: usize = 0x0;
+         pub const WALKSPEED: usize = 0x1c4;
+         pub const WALKSPEED_CHECK: usize = 0x39c;
+    }
+
+    pub mod instance {
+         pub const CHILDREN_END: usize = 0x8;
+         pub const CHILDREN_START: usize = 0x70;
+         pub const CLASS_BASE: usize = 0x1b0;
+         pub const CLASS_DESCRIPTOR: usize = 0x18;
+         pub const CLASS_NAME: usize = 0x8;
+         pub const NAME: usize = 0x0;
+         pub const NAME_CONTAINER: usize = 0x68;
+         pub const PARENT: usize = 0x60;
+         pub const THIS: usize = 0x8;
+    }
+
+    pub mod lru_holder {
+         pub const MEM_ENFORCED_LRU_CACHE: usize = 0x20;
+    }
+
+    pub mod lru_node {
+         pub const ASSET_ID: usize = 0x10;
+         pub const CACHED_ITEM: usize = 0x40;
+         pub const NEXT: usize = 0x0;
+    }
+
+    pub mod lighting {
+         pub const AMBIENT: usize = 0xb8;
+         pub const BRIGHTNESS: usize = 0x100;
+         pub const CLOCK_TIME: usize = 0xb0;
+         pub const COLOR_SHIFT_BOTTOM: usize = 0xd0;
+         pub const COLOR_SHIFT_TOP: usize = 0xc4;
+         pub const ENVIRONMENT_DIFFUSE_SCALE: usize = 0x104;
+         pub const ENVIRONMENT_SPECULAR_SCALE: usize = 0x108;
+         pub const EXPOSURE_COMPENSATION: usize = 0x10c;
+         pub const FOG_COLOR: usize = 0xdc;
+         pub const FOG_END: usize = 0x114;
+         pub const FOG_START: usize = 0x118;
+         pub const GEOGRAPHIC_LATITUDE: usize = 0x11c;
+         pub const GLOBAL_SHADOWS: usize = 0x12c;
+         pub const GRADIENT_BOTTOM: usize = 0x178;
+         pub const GRADIENT_TOP: usize = 0x138;
+         pub const LIGHT_COLOR: usize = 0x144;
+         pub const LIGHT_DIRECTION: usize = 0x150;
+Use code with caution.
+pub const MOON_POSITION: usize = 0x16c;
+pub const OUTDOOR_AMBIENT: usize = 0xe8;
+pub const SKY: usize = 0x1b0;
+pub const SOURCE: usize = 0x15c;
+pub const SUN_POSITION: usize = 0x160;
+}
+pub mod local_script {
+pub const BYTE_CODE: usize = 0x0;
+pub const GUID: usize = 0xb8;
+pub const HASH: usize = 0x188;
+}
+pub mod material_colors {
+pub const ASPHALT: usize = 0x30;
+pub const BASALT: usize = 0x27;
+pub const BRICK: usize = 0xf;
+pub const COBBLESTONE: usize = 0x33;
+pub const CONCRETE: usize = 0xc;
+pub const CRACKED_LAVA: usize = 0x2d;
+pub const GLACIER: usize = 0x1b;
+pub const GRASS: usize = 0x6;
+pub const GROUND: usize = 0x2a;
+pub const ICE: usize = 0x36;
+pub const LEAFY_GRASS: usize = 0x39;
+pub const LIMESTONE: usize = 0x3f;
+pub const MUD: usize = 0x24;
+pub const PAVEMENT: usize = 0x42;
+pub const ROCK: usize = 0x18;
+pub const SALT: usize = 0x3c;
+pub const SAND: usize = 0x12;
+pub const SANDSTONE: usize = 0x21;
+pub const SLATE: usize = 0x9;
+pub const SNOW: usize = 0x1e;
+pub const WOOD_PLANKS: usize = 0x15;
+}
+pub mod mem_enforced_lru_cache {
+pub const HEAD: usize = 0x8;
+}
+pub mod mesh_content_provider {
+pub const LRU_HOLDER: usize = 0xc0;
+}
+pub mod mesh_part {
+pub const MESH_ID: usize = 0x2f8;
+pub const TEXTURE: usize = 0x328;
+}
+pub mod misc {
+pub const ADORNEE: usize = 0xd8;
+pub const ANIMATION_ID: usize = 0xa8;
+pub const STRING_LENGTH: usize = 0x10;
+pub const VALUE: usize = 0xa0;
+}
+pub mod model {
+pub const PRIMARY_PART: usize = 0x240;
+pub const SCALE: usize = 0x12c;
+}
+pub mod module_script {
+pub const BYTE_CODE: usize = 0x0;
+pub const GUID: usize = 0xb8;
+pub const HASH: usize = 0x348;
+pub const IS_CORE_SCRIPT: usize = 0x0;
+}
+pub mod mouse_service {
+pub const INPUT_OBJECT: usize = 0xe8;
+pub const INPUT_OBJECT2: usize = 0xf8;
+pub const MOUSE_POSITION: usize = 0xbc;
+pub const SENSITIVITY_POINTER: usize = 0x0;
+}
+pub mod particle_emitter {
+pub const ACCELERATION: usize = 0x1c8;
+pub const BRIGHTNESS: usize = 0x204;
+pub const DRAG: usize = 0x208;
+pub const LIFETIME: usize = 0x1dc;
+pub const LIGHT_EMISSION: usize = 0x220;
+pub const LIGHT_INFLUENCE: usize = 0x224;
+pub const RATE: usize = 0x230;
+pub const ROT_SPEED: usize = 0x1e4;
+pub const ROTATION: usize = 0x1ec;
+pub const SPEED: usize = 0x1f4;
+pub const SPREAD_ANGLE: usize = 0x1fc;
+pub const TEXTURE: usize = 0x1a8;
+pub const TIME_SCALE: usize = 0x244;
+pub const VELOCITY_INHERITANCE: usize = 0x248;
+pub const Z_OFFSET: usize = 0x24c;
+}
+pub mod player {
+pub const ACCOUNT_AGE: usize = 0x364;
+pub const CAMERA_MODE: usize = 0x378;
+pub const DISPLAY_NAME: usize = 0x120;
+pub const HEALTH_DISPLAY_DISTANCE: usize = 0x3a0;
+pub const LOCAL_PLAYER: usize = 0x118;
+pub const LOCALE_ID: usize = 0x100;
+pub const MAX_ZOOM_DISTANCE: usize = 0x370;
+pub const MIN_ZOOM_DISTANCE: usize = 0x374;
+pub const MODEL_INSTANCE: usize = 0x2a0;
+pub const MOUSE: usize = 0x11f0;
+pub const NAME_DISPLAY_DISTANCE: usize = 0x3b0;
+pub const TEAM: usize = 0x2e0;
+pub const TEAM_COLOR: usize = 0x3b8;
+pub const USER_ID: usize = 0xb8;
+}
+pub mod player_configurer {
+pub const POINTER: usize = 0x0;
+}
+pub mod player_mouse {
+pub const ICON: usize = 0xb0;
+pub const WORKSPACE: usize = 0x138;
+}
+pub mod primitive {
+pub const ASSEMBLY_ANGULAR_VELOCITY: usize = 0xec;
+pub const ASSEMBLY_LINEAR_VELOCITY: usize = 0xe0;
+pub const FLAGS: usize = 0x1be;
+pub const MATERIAL: usize = 0x0;
+pub const OWNER: usize = 0x218;
+pub const POSITION: usize = 0xd4;
+pub const ROTATION: usize = 0xb0;
+pub const SIZE: usize = 0x1c4;
+pub const VALIDATE: usize = 0x6;
+}
+pub mod primitive_flags {
+pub const ANCHORED: usize = 0x2;
+pub const CAN_COLLIDE: usize = 0x8;
+pub const CAN_QUERY: usize = 0x20;
+pub const CAN_TOUCH: usize = 0x10;
+}
+pub mod proximity_prompt {
+pub const ACTION_TEXT: usize = 0x98;
+pub const ENABLED: usize = 0x11e;
+pub const GAMEPAD_KEY_CODE: usize = 0x104;
+pub const HOLD_DURATION: usize = 0x108;
+pub const KEY_CODE: usize = 0x10c;
+pub const MAX_ACTIVATION_DISTANCE: usize = 0x110;
+pub const OBJECT_TEXT: usize = 0xb8;
+pub const REQUIRES_LINE_OF_SIGHT: usize = 0x11f;
+}
+pub mod render_job {
+pub const FAKE_DATA_MODEL: usize = 0x38;
+pub const REAL_DATA_MODEL: usize = 0x1f0;
+pub const RENDER_VIEW: usize = 0x1e0;
+}
+pub mod render_view {
+pub const DEVICE_D3D11: usize = 0x0;
+pub const LIGHTING_VALID: usize = 0x0;
+pub const SKY_VALID: usize = 0x0;
+pub const VISUAL_ENGINE: usize = 0x0;
+}
+pub mod run_service {
+pub const HEARTBEAT_FPS: usize = 0xf4;
+pub const HEARTBEAT_TASK: usize = 0x9668;
+}
+pub mod script {
+pub const BYTE_CODE: usize = 0x0;
+pub const GUID: usize = 0xb8;
+pub const HASH: usize = 0x188;
+}
+pub mod script_context {
+pub const REQUIRE_BYPASS: usize = 0x0;
+}
+pub mod seat {
+pub const OCCUPANT: usize = 0x200;
+}
+pub mod sky {
+pub const MOON_ANGULAR_SIZE: usize = 0x22c;
+pub const MOON_TEXTURE_ID: usize = 0xb0;
+pub const SKYBOX_BK: usize = 0xe0;
+pub const SKYBOX_DN: usize = 0x110;
+pub const SKYBOX_FT: usize = 0x140;
+pub const SKYBOX_LF: usize = 0x170;
+pub const SKYBOX_ORIENTATION: usize = 0x220;
+pub const SKYBOX_RT: usize = 0x1a0;
+pub const SKYBOX_UP: usize = 0x1d0;
+pub const STAR_COUNT: usize = 0x230;
+pub const SUN_ANGULAR_SIZE: usize = 0x224;
+pub const SUN_TEXTURE_ID: usize = 0x200;
+}
+pub mod sound {
+pub const IS_PLAYING: usize = 0x128;
+pub const LOOPED: usize = 0x125;
+pub const PLAYBACK_SPEED: usize = 0x104;
+pub const ROLL_OFF_MAX_DISTANCE: usize = 0x108;
+pub const ROLL_OFF_MIN_DISTANCE: usize = 0x10c;
+pub const SOUND_GROUP: usize = 0xd0;
+pub const SOUND_ID: usize = 0xb0;
+pub const VOLUME: usize = 0x118;
+}
+pub mod spawn_location {
+pub const ALLOW_TEAM_CHANGE_ON_TOUCH: usize = 0x1d8;
+pub const ENABLED: usize = 0x1d9;
+pub const FORCEFIELD_DURATION: usize = 0x1d0;
+pub const NEUTRAL: usize = 0x1da;
+pub const TEAM_COLOR: usize = 0x1d4;
+}
+pub mod special_mesh {
+pub const MESH_ID: usize = 0xe0;
+pub const SCALE: usize = 0xac;
+}
+pub mod stats_item {
+pub const VALUE: usize = 0x1422a;
+}
+pub mod sun_rays_effect {
+pub const ENABLED: usize = 0x98;
+pub const INTENSITY: usize = 0xa0;
+pub const SPREAD: usize = 0xa4;
+}
+pub mod surface_appearance {
+pub const ALPHA_MODE: usize = 0x1d8;
+pub const COLOR: usize = 0x1c0;
+pub const COLOR_MAP: usize = 0xb0;
+pub const EMISSIVE_MASK_CONTENT: usize = 0xe0;
+pub const EMISSIVE_STRENGTH: usize = 0x1dc;
+pub const EMISSIVE_TINT: usize = 0x1cc;
+pub const METALNESS_MAP: usize = 0x110;
+pub const NORMAL_MAP: usize = 0x140;
+pub const ROUGHNESS_MAP: usize = 0x170;
+}
+pub mod task_scheduler {
+pub const JOB_END: usize = 0xd0;
+pub const JOB_NAME: usize = 0x18;
+pub const JOB_START: usize = 0xc8;
+pub const MAX_FPS: usize = 0xb0;
+pub const POINTER: usize = 0x8c9d698;
+}
+pub mod team {
+pub const BRICK_COLOR: usize = 0xa0;
+}
+pub mod terrain {
+pub const GRASS_LENGTH: usize = 0x1d8;
+pub const MATERIAL_COLORS: usize = 0x4a0;
+pub const WATER_COLOR: usize = 0x1c8;
+pub const WATER_REFLECTANCE: usize = 0x1e0;
+pub const WATER_TRANSPARENCY: usize = 0x1e4;
+pub const WATER_WAVE_SIZE: usize = 0x1e8;
+pub const WATER_WAVE_SPEED: usize = 0x1ec;
+}
+pub mod textures {
+pub const DECAL_TEXTURE: usize = 0x1c8;
+pub const TEXTURE_TEXTURE: usize = 0x1c8;
+}
+pub mod tool {
+pub const CAN_BE_DROPPED: usize = 0x4a0;
+pub const ENABLED: usize = 0x4a1;
+pub const GRIP: usize = 0x494;
+pub const MANUAL_ACTIVATION_ONLY: usize = 0x4a2;
+pub const REQUIRES_HANDLE: usize = 0x4a3;
+pub const TEXTURE_ID: usize = 0x348;
+pub const TOOLTIP: usize = 0x450;
+}
+pub mod union_operation {
+pub const ASSET_ID: usize = 0x2f8;
+}
+pub mod user_input_service {
+pub const WINDOW_INPUT_STATE: usize = 0x288;
+}
+pub mod vehicle_seat {
+pub const MAX_SPEED: usize = 0x210;
+pub const STEER_FLOAT: usize = 0x214;
+pub const THROTTLE_FLOAT: usize = 0x218;
+pub const TORQUE: usize = 0x21c;
+pub const TURN_SPEED: usize = 0x220;
+}
+pub mod visual_engine {
+pub const DIMENSIONS: usize = 0xb10;
+pub const FAKE_DATA_MODEL: usize = 0xaf0;
+pub const POINTER: usize = 0x879a218;
+pub const RENDER_VIEW: usize = 0xc40;
+pub const VIEW_MATRIX: usize = 0x1b0;
+}
+pub mod weld {
+pub const PART0: usize = 0x100;
+pub const PART1: usize = 0x110;
+}
+pub mod weld_constraint {
+pub const PART0: usize = 0xa0;
+pub const PART1: usize = 0xb0;
+}
+pub mod window_input_state {
+pub const CAPS_LOCK: usize = 0x40;
+pub const CURRENT_TEXT_BOX: usize = 0x48;
+}
+pub mod workspace {
+pub const CURRENT_CAMERA: usize = 0x4a0;
+pub const DISTRIBUTED_GAME_TIME: usize = 0x4c0;
+pub const READ_ONLY_GRAVITY: usize = 0x9c0;
+pub const WORLD: usize = 0x3f8;
+}
+pub mod world {
+pub const AIR_PROPERTIES: usize = 0x230;
+pub const FALLEN_PARTS_DESTROY_HEIGHT: usize = 0x20c;
+pub const GRAVITY: usize = 0x218;
+pub const PRIMITIVES: usize = 0x2a0;
+pub const WORLD_STEPS_PER_SEC: usize = 0x858;
+}
+}
